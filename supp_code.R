@@ -85,7 +85,7 @@ Algo1 <- function(A, cov = 2, dhat = NULL, dmax = 10, G = 1:10) {
 ## Input -
 ## A: An adjacency matrix.
 ## covariates: A matrix of observed covariates.
-## betahatmethod: Procedure to estimate vertex covariate effect. "SA" (Step 5a) by default or "WA" (Step 5b).
+## betahatmethod: Procedure to estimate vertex covariate effect. "SA" (Step 2a) by default or "WA" (Step 2b).
 ## cov: Possible value that the covariate can take. `2` by default for one binary covariate.
 ## dhat: Embedding dimension. `NULL` by default to choose by profile likelihood (Remark 2).
 ## dmax: `nv` for `irlba::irlba`. `10` by default. See `help(irlba, package = "irlba")`.
