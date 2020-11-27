@@ -1,1 +1,1 @@
-# sbm-cov
+# Supplementary Code
