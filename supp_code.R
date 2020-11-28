@@ -60,7 +60,7 @@ Algo1 <- function(A, cov = 2, dhat = NULL, dmax = 10, G = 1:10) {
   BZhat <- t(muhats) %*% Ipq %*% muhats
   
   ## Step 4
-  model2 <- Mclust(diag(BZhat), ncol(BZhat)/cov, verbose = FALSE)
+  model2 <- Mclust(diag(BZhat), ncol(BZhat)/prod(cov), verbose = FALSE)
   phihat <- model2$classification
   
   ## Step 5
@@ -115,7 +115,7 @@ Algo2 <- function(A, covariates, betahatmethod = "SA", cov = 2, dhat = NULL, dma
   muhats <- matrix(model$parameters$mean, nrow = dhat)
   BZhat <- t(muhats) %*% Ipq %*% muhats
   
-  model2 <- Mclust(diag(BZhat), ncol(BZhat)/cov, verbose = FALSE)
+  model2 <- Mclust(diag(BZhat), ncol(BZhat)/prod(cov), verbose = FALSE)
   phihat <- model2$classification
   
   ## Step 2
@@ -140,7 +140,7 @@ Algo2 <- function(A, covariates, betahatmethod = "SA", cov = 2, dhat = NULL, dma
   Yhat_tilde <- embedding_tilde$X[,1:dhat_tilde] %*% sqrt(diag(s_tilde[1:dhat_tilde], nrow=dhat_tilde, ncol=dhat_tilde))
   
   ## Step 5
-  model_tilde <- Mclust(Yhat_tilde, ncol(BZhat)/cov, verbose = FALSE)
+  model_tilde <- Mclust(Yhat_tilde, ncol(BZhat)/prod(cov), verbose = FALSE)
   tautilde <- model_tilde$classification
   
   output$xihat <- xihat
