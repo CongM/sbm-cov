@@ -11,7 +11,6 @@
 
 <meta name="author" content="Cong Mu" />
 
-<meta name="date" content="2020-11-27" />
 
 <title>Demo</title>
 
@@ -365,7 +364,6 @@ summary {
 
 <h1 class="title toc-ignore">Demo</h1>
 <h4 class="author">Cong Mu</h4>
-<h4 class="date">11/27/2020</h4>
 
 </div>
 
@@ -423,7 +421,7 @@ Algo1 &lt;- function(A, cov = 2, dhat = NULL, dmax = 10, G = 1:10) {
   BZhat &lt;- t(muhats) %*% Ipq %*% muhats
   
   ## Step 4
-  model2 &lt;- Mclust(diag(BZhat), ncol(BZhat)/cov, verbose = FALSE)
+  model2 &lt;- Mclust(diag(BZhat), ncol(BZhat)/prod(cov), verbose = FALSE)
   phihat &lt;- model2$classification
   
   ## Step 5
@@ -478,7 +476,7 @@ Algo2 &lt;- function(A, covariates, betahatmethod = &quot;SA&quot;, cov = 2, dha
   muhats &lt;- matrix(model$parameters$mean, nrow = dhat)
   BZhat &lt;- t(muhats) %*% Ipq %*% muhats
   
-  model2 &lt;- Mclust(diag(BZhat), ncol(BZhat)/cov, verbose = FALSE)
+  model2 &lt;- Mclust(diag(BZhat), ncol(BZhat)/prod(cov), verbose = FALSE)
   phihat &lt;- model2$classification
   
   ## Step 2
@@ -503,7 +501,7 @@ Algo2 &lt;- function(A, covariates, betahatmethod = &quot;SA&quot;, cov = 2, dha
   Yhat_tilde &lt;- embedding_tilde$X[,1:dhat_tilde] %*% sqrt(diag(s_tilde[1:dhat_tilde], nrow=dhat_tilde, ncol=dhat_tilde))
   
   ## Step 5
-  model_tilde &lt;- Mclust(Yhat_tilde, ncol(BZhat)/cov, verbose = FALSE)
+  model_tilde &lt;- Mclust(Yhat_tilde, ncol(BZhat)/prod(cov), verbose = FALSE)
   tautilde &lt;- model_tilde$classification
   
   output$xihat &lt;- xihat
@@ -516,8 +514,8 @@ Algo2 &lt;- function(A, covariates, betahatmethod = &quot;SA&quot;, cov = 2, dha
 </div>
 <div id="examples" class="section level4">
 <h4>Examples</h4>
-<div id="block-rank-one-model-with-one-5-categorical-covariate-section-5.1" class="section level5">
-<h5>2-block rank one model with one 5-categorical covariate (Section 5.1)</h5>
+<div id="two-block-rank-one-model-with-one-five-categorical-covariate-section-5.1" class="section level5">
+<h5>Two-block rank one model with one five-categorical covariate (Section 5.1)</h5>
 <pre class="r"><code>## Hyperparameters
 seed &lt;- 2020
 addCovariates &lt;- TRUE
@@ -574,8 +572,8 @@ data.frame(Algorithms = c(&quot;Algo1&quot;, &quot;Algo2&quot;), ARI = c(ARI1, A
 ## 1      Algo1 0.3938005
 ## 2      Algo2 0.7671443</code></pre>
 </div>
-<div id="block-homogeneous-model-with-one-5-categorical-covariate-section-5.2" class="section level5">
-<h5>2-block homogeneous model with one 5-categorical covariate (Section 5.2)</h5>
+<div id="two-block-homogeneous-model-with-one-five-categorical-covariate-section-5.2" class="section level5">
+<h5>Two-block homogeneous model with one five-categorical covariate (Section 5.2)</h5>
 <pre class="r"><code>## Use `servm0` as one covariate (binary)
 ## Hyperparameters
 seed &lt;- 2020

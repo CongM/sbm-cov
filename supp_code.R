@@ -152,7 +152,7 @@ Algo2 <- function(A, covariates, betahatmethod = "SA", cov = 2, dhat = NULL, dma
 
 
 
-#### Example 1 - 2-block rank one model with one 5-categorical covariate (Section 5.1)
+#### Example 1 - two-block rank one model with one five-categorical covariate (Section 5.1)
 
 ## Hyperparameters
 seed <- 2020
@@ -209,7 +209,7 @@ data.frame(Algorithms = c("Algo1", "Algo2"), ARI = c(ARI1, ARI2))
 
 
 
-#### Example 2 - 2-block homogeneous model with one 5-categorical covariate (Section 5.2)
+#### Example 2 - two-block homogeneous model with one five-categorical covariate (Section 5.2)
 
 ## Hyperparameters
 seed <- 2020
