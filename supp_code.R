@@ -25,7 +25,7 @@ library(grdpg)
 
 
 #### Algorithm 1 - (Section 3)
-## Estimation of induced block assignment including the vertex covariate effect
+## Estimation of induced block assignment using only the adjacency matrix
 ##
 ## Input -
 ## A: An adjacency matrix.
@@ -36,7 +36,7 @@ library(grdpg)
 ##
 ## Output -
 ## xihat: Block assignments including the vertex covariate effect.
-## tauhat: Induced block assignments after accounting for the vertex covariate effect.
+## tauhat: Induced block assignments.
 ##
 ####
 
@@ -80,7 +80,7 @@ Algo1 <- function(A, cov = 2, dhat = NULL, dmax = 10, G = 1:10) {
 
 
 #### Algorithm 2 - (Section 3) 
-## Estimation of induced block assignment after accounting for the vertex covariate effect
+## Estimation of induced block assignment incorporating both the adjacency matrix and the vertex covariates
 ##
 ## Input -
 ## A: An adjacency matrix.
@@ -93,8 +93,8 @@ Algo1 <- function(A, cov = 2, dhat = NULL, dmax = 10, G = 1:10) {
 ##
 ## Output -
 ## xihat: Block assignments including the vertex covariate effect.
-## tautilde: Induced block assignments after accounting for the vertex covariate effect.
-## betahat: Vertex covariate effect.
+## tautilde: Induced block assignments.
+## betahat: Vertex covariate effect size.
 ##
 ####
 
@@ -169,7 +169,7 @@ d <- 1
 ## Number of vertices
 n <- 1000 
 
-## Latent positions and vertex covariate effect
+## Latent positions and vertex covariate effect size
 p <- 0.3
 q <- 0.4
 latent <- cbind(p, q)
@@ -226,7 +226,7 @@ d <- 2
 ## Number of vertices
 n <- 1000 
 
-## Latent positions and vertex covariate effect
+## Latent positions and vertex covariate effect size
 a <- 0.3
 b <- 0.25
 latent <- cbind(c(sqrt(a), 0), c(b/sqrt(a), sqrt((a+b)*(a-b)/a)))

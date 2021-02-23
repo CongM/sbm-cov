@@ -397,7 +397,7 @@ library(grdpg)</code></pre>
 <li>Output
 <ul>
 <li><code>xihat</code>: Block assignments including the vertex covariate effect.</li>
-<li><code>tauhat</code>: Induced block assignments after accounting for the vertex covariate effect.</li>
+<li><code>tauhat</code>: Induced block assignments.</li>
 </ul></li>
 </ul>
 <pre class="r"><code>## Estimation of induced block assignment including the vertex covariate effect
@@ -454,8 +454,8 @@ Algo1 &lt;- function(A, cov = 2, dhat = NULL, dmax = 10, G = 1:10) {
 <li>Output
 <ul>
 <li><code>xihat</code>: Block assignments including the vertex covariate effect.</li>
-<li><code>tautilde</code>: Induced block assignments after accounting for the vertex covariate effect.</li>
-<li><code>betahat</code>: Vertex covariate effect.</li>
+<li><code>tautilde</code>: Induced block assignments.</li>
+<li><code>betahat</code>: Vertex covariate effect size.</li>
 </ul></li>
 </ul>
 <pre class="r"><code>## Estimation of induced block assignment after accounting for the vertex covariate effect
@@ -531,7 +531,7 @@ d &lt;- 1
 ## Number of vertices
 n &lt;- 1000 
 
-## Latent positions and vertex covariate effect
+## Latent positions and vertex covariate effect size
 p &lt;- 0.3
 q &lt;- 0.4
 latent &lt;- cbind(p, q)
@@ -590,7 +590,7 @@ d &lt;- 2
 ## Number of vertices
 n &lt;- 1000 
 
-## Latent positions and vertex covariate effect
+## Latent positions and vertex covariate effect size
 a &lt;- 0.3
 b &lt;- 0.25
 latent &lt;- cbind(c(sqrt(a), 0), c(b/sqrt(a), sqrt((a+b)*(a-b)/a)))
