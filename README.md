@@ -5,6 +5,6 @@ Mu, C., Mele, A., Hao, L., Cape, J., Athreya, A., & Priebe, C. E. (2022). On Spe
 - For implementation of our algorithms, check [algorithm.R](algorithm.R).
 - For examples using our algorithms, check [example.R](example.R) and [demo.html](demo.html).
 - For simulations in the paper, check [Chernoff.R](Chernoff.R) and [simulation.R](simulation.R).
-- For real data examples in the paper, check [realdata.R](realdata.R).
+- For real data experiments in the paper, check [realdata.R](realdata.R).
 - For implementation of covariate assisted spectral clustering, see [rCASC](https://github.com/norbertbin/rCASC/).
 - For implementation of pairwise covariates-adjusted stochastic block model, see [PCABM](https://github.com/sihanhuang/PCABM).
