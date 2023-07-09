@@ -1,6 +1,6 @@
 # Supplementary Code
 
-Mu, C., Mele, A., Hao, L., Cape, J., Athreya, A., & Priebe, C. E. (2020). On spectral algorithms for community detection in stochastic blockmodel graphs with vertex covariates. arXiv preprint arXiv:2007.02156. <a href="https://arxiv.org/abs/2007.02156" target="_blank">[Preprint]</a>
+Mu, C., Mele, A., Hao, L., Cape, J., Athreya, A., & Priebe, C. E. (2022). On Spectral Algorithms for Community Detection in Stochastic Blockmodel Graphs with Vertex Covariates. IEEE Transactions on Network Science and Engineering. <a href="https://doi.org/10.1109/TNSE.2022.3177708" target="_blank">[Paper]</a> <a href="https://arxiv.org/abs/2007.02156" target="_blank">[Preprint]</a>
 
 - For implementation of our algorithms, check [algorithm.R](algorithm.R).
 - For examples using our algorithms, check [example.R](example.R) and [demo.html](demo.html).
